@@ -1,5 +1,4 @@
-import Header from '@/components/common/Header';
-import SideBar from '@/components/common/SideBar';
+import { Header, SideBar, Footer } from '@/components/common';
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 
@@ -14,6 +13,7 @@ const Layout: FC<LayoutProps> = ({ children, className, onToggleTheme }) => {
       <Header />
       <SideBar onThemeToggle={onToggleTheme}></SideBar>
       <main className={className}>{children}</main>
+      <Footer />
     </LayoutWrapper>
   );
 };

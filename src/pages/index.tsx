@@ -1,13 +1,14 @@
-import Link from "next/link";
+import { Hero, Works, Contact, Skills } from '@/components/home';
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <>
-      <main>
-        <Link href='/blog'>Blog</Link>
-      </main>
-    </>
+    <main>
+      <Hero />
+      <Works />
+      <Skills />
+      <Contact />
+    </main>
   );
 };
 
-export default Home;
+export default HomePage;
