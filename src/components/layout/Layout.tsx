@@ -1,14 +1,18 @@
 import Header from '@/components/common/Header';
+import SideBar from '@/components/common/SideBar';
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 
-const Layout: FC<{ children: ReactNode; className: string }> = ({
-  children,
-  className,
-}) => {
+interface LayoutProps {
+  children: ReactNode;
+  className: string;
+  onToggleTheme: () => void;
+}
+const Layout: FC<LayoutProps> = ({ children, className, onToggleTheme }) => {
   return (
     <LayoutWrapper>
       <Header />
+      <SideBar onThemeToggle={onToggleTheme}></SideBar>
       <main className={className}>{children}</main>
     </LayoutWrapper>
   );
@@ -17,5 +21,5 @@ const Layout: FC<{ children: ReactNode; className: string }> = ({
 export default Layout;
 
 const LayoutWrapper = styled.div`
-  padding-top: 80px;
+  padding-top: var(--header-height);
 `;
