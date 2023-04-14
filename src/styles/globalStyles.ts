@@ -1,14 +1,17 @@
+import { text } from 'stream/consumers';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${reset}
-  
-  body {
-    margin: 0;
-    padding: 0;
-    background: blue;
+  :root {
+    --header-height: 80px;
   }
-`;
-
-export default GlobalStyle;
+  body {
+    background: ${({ theme }) => theme.color.background};
+    color: ${({ theme }) => theme.color.text.normal};
+  }
+  a {
+    color: ${({ theme }) => theme.color.text.normal};
+    text-decoration:none;
+  }`;
