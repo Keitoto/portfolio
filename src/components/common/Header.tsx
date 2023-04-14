@@ -1,8 +1,11 @@
+import { StyledButton } from '@/components/common/StyledUI';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 
 const Header = () => {
+  const router = useRouter();
   return (
     <Wrapper>
       <Container>
@@ -10,9 +13,19 @@ const Header = () => {
           <Logo>Keita Sekihara</Logo>
         </HomeLink>
         <Nav>
-          <NavLink href="#works">Works</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NextLink href="/blog">blog</NextLink>
+          <NextLink
+            href="/works"
+            className={router.pathname == '/works' ? 'active' : ''}
+          >
+            Works
+          </NextLink>
+          {/* <NavLink href="/works" className={router.pathname == "/works" ? "active" : ""}>Works</NavLink> */}
+          <NextLink
+            href="/blog"
+            className={router.pathname == '/blog' ? 'active' : ''}
+          >
+            Blog
+          </NextLink>
         </Nav>
         <CTAButton href="#contact">Let's talk</CTAButton>
       </Container>
@@ -30,6 +43,7 @@ const Wrapper = styled.div`
   top: 0;
 `;
 const Container = styled.div`
+  height: var(--header-height);
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -38,12 +52,14 @@ const Container = styled.div`
 `;
 const HomeLink = styled(Link)``;
 const Logo = styled.h1`
-  font-size: 20px;
+  color: ${({ theme: { color } }) => color.primary};
+  font-weight: bold;
 `;
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: ${({ theme: { color } }) => color.text.strong};
 `;
 const NavLink = styled.a`
   display: inline-block;
@@ -51,10 +67,11 @@ const NavLink = styled.a`
 `;
 const NextLink = styled(Link)`
   display: inline-block;
+  font-weight: bold;
   margin: 0 12px;
+  color: ${({ theme: { color }, className }) =>
+    className ? color.text.strong : color.text.normal};
 `;
-const CTAButton = styled.a`
+const CTAButton = styled(StyledButton)`
   padding: 12px;
-  background-color: gray;
-  color: #fff;
 `;
