@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <Layout className={roboto.className} onToggleTheme={themeToggler}>
+      <Layout className={roboto.className} onToggleTheme={themeToggler} theme={theme}>
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
