@@ -5,7 +5,10 @@ import reset from 'styled-reset';
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   :root {
-    --header-height: 80px;
+    --header-height: 120px;
+    --container-width: 900px;
+    --space-side-header:30px;
+    --space-side-section:60px;
   }
   body {
     background: ${({ theme }) => theme.color.background};
