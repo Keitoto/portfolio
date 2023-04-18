@@ -17,11 +17,11 @@ const Layout: FC<LayoutProps> = ({
   theme,
 }) => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper className={className}>
       <LineBackground />
       <Header />
       <SideBar onThemeToggle={onToggleTheme} theme={theme}></SideBar>
-      <Main className={className}>{children}</Main>
+      <Main>{children}</Main>
       {/* <Footer /> */}
     </LayoutWrapper>
   );

@@ -11,7 +11,7 @@ export default Footer;
 
 const StyledFooter = styled.footer`
   color: ${({ theme: { color } }) => color.text};
-  height: 60px;
+  height: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;

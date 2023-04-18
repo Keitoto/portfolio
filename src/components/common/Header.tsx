@@ -47,7 +47,7 @@ const StyledHeader = styled.div`
 `;
 // const Container = styled.div`
 //   height: var(--header-height);
-//   max-width: 1200px;
+//   max-width: 120rem;
 //   margin: 0 auto;
 //   display: flex;
 //   align-items: center;
@@ -66,16 +66,16 @@ const Nav = styled.nav`
 `;
 const NavLink = styled.a`
   display: inline-block;
-  margin: 0 12px;
+  margin: 0 1.2rem;
 `;
 const NextLink = styled(Link)`
   display: inline-block;
   font-weight: bold;
-  margin: 0 12px;
+  margin: 0 1.2rem;
   color: ${({ theme: { color }, className }) =>
     className ? color.text.strong : color.text.normal};
 `;
 const CTAButton = styled(StyledButton)`
-  padding: 12px;
+  padding: 1.2rem;
   line-height: 1;
 `;

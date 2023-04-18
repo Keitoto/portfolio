@@ -46,7 +46,7 @@ const StyledSideBar = styled.div`
   position: fixed;
   top: 0;
   bottom: var(--space-side-header);
-  width: 48px;
+  width: 4.8rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -61,35 +61,35 @@ const SideBarRight = styled(StyledSideBar)`
   align-items: flex-end;
 `;
 const ToggleButton = styled.button`
-  width: 48px;
-  height: 26px;
-  border-radius: 48px;
+  width: 4.8rem;
+  height: 2.6rem;
+  border-radius: 4.8rem;
   position: relative;
-  padding: 4px;
+  padding: .4rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: none;
   background-color: ${({ theme: { color } }) => color.background};
-  border: 2px solid ${({ theme: { color } }) => color.text.normal};
+  border: .2rem solid ${({ theme: { color } }) => color.text.normal};
   .ball {
     background-color: ${({ theme: { color } }) => color.text.normal};
-    width: 16px;
-    height: 16px;
+    width: 1.6rem;
+    height: 1.6rem;
     position: absolute;
-    left: 3px;
-    top: 3px;
+    left: .3rem;
+    top: .3rem;
     border-radius: 50%;
     transition: transform 0.2s linear;
   }
   svg {
     color: ${({ theme: { color } }) => color.text.normal};
-    width: 16px;
-    height: 16px;
+    width: 1.6rem;
+    height: 1.6rem;
   }
   &.light .ball {
-    transform: translateX(22px);
+    transform: translateX(2.2rem);
   }
 `;
 
@@ -100,12 +100,12 @@ const SocialLinks = styled.ul`
   justify-content: flex-end;
 
   li:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
   a {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 2.4rem;
+    height: 2.4rem;
   }
   img {
     width: 100%;

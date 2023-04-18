@@ -16,8 +16,8 @@ const Hero = () => {
       <Section>
         <BigHeadingContainer>
           <BigHeading>
-            Hi, I'm <span>Keita Sekihara</span>,<br />Front-End <br/> React.js
-            Developer
+            Hi, I'm <span>Keita Sekihara</span>,<br />
+            Front-End <br /> React.js Developer
           </BigHeading>
         </BigHeadingContainer>
       </Section>
@@ -40,13 +40,14 @@ const Container = styled(StyledContainer)`
   justify-content: center;
 `;
 const Heading = styled.h1`
-  font-size: 48px;
+  font-size: 4.8rem;
   span {
+    font-size: 4.8rem;
     color: ${({ theme: { color } }) => color.primary};
   }
 `;
 const Lead = styled.p`
-  font-size: 48px;
+  font-size: 4.8rem;
 `;
 
 const BigHeadingContainer = styled(StyledContainer)`
@@ -57,12 +58,13 @@ const BigHeadingContainer = styled(StyledContainer)`
 `;
 
 const BigHeading = styled.h1`
-  font-size: 60px;
+  font-size: 6rem;
   span {
     color: ${({ theme: { color } }) => color.primary};
+    font-size: 6rem;
   }
 `;
 
-// Hi, I'm Keita Sekihara, 
-// Front-End React.js 
+// Hi, I'm Keita Sekihara,
+// Front-End React.js
 // Web Developer
