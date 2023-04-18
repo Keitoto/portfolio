@@ -7,49 +7,52 @@ import styled from 'styled-components';
 const Header = () => {
   const router = useRouter();
   return (
-    <Wrapper>
-      <Container>
-        <HomeLink href="/">
-          <Logo>Keita Sekihara</Logo>
-        </HomeLink>
-        <Nav>
-          <NextLink
-            href="/works"
-            className={router.pathname == '/works' ? 'active' : ''}
-          >
-            Works
-          </NextLink>
-          {/* <NavLink href="/works" className={router.pathname == "/works" ? "active" : ""}>Works</NavLink> */}
-          <NextLink
-            href="/blog"
-            className={router.pathname == '/blog' ? 'active' : ''}
-          >
-            Blog
-          </NextLink>
-        </Nav>
-        <CTAButton href="#contact">Let's talk</CTAButton>
-      </Container>
-    </Wrapper>
+    <StyledHeader>
+      <HomeLink href="/">
+        <Logo>Keita Sekihara</Logo>
+      </HomeLink>
+      <Nav>
+        <NextLink
+          href="/works"
+          className={router.pathname == '/works' ? 'active' : ''}
+        >
+          Works
+        </NextLink>
+        {/* <NavLink href="/works" className={router.pathname == "/works" ? "active" : ""}>Works</NavLink> */}
+        <NextLink
+          href="/blog"
+          className={router.pathname == '/blog' ? 'active' : ''}
+        >
+          Blog
+        </NextLink>
+      </Nav>
+      <CTAButton href="#contact">Let's talk</CTAButton>
+    </StyledHeader>
   );
 };
 
 export default Header;
 
-const Wrapper = styled.div`
-  height: 80px;
+const StyledHeader = styled.div`
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-`;
-const Container = styled.div`
+  padding: 0 var(--space-side-header);
   height: var(--header-height);
-  max-width: 1000px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: ${({ theme: { color } }) => color.background};
 `;
+// const Container = styled.div`
+//   height: var(--header-height);
+//   max-width: 1200px;
+//   margin: 0 auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// `;
 const HomeLink = styled(Link)``;
 const Logo = styled.h1`
   color: ${({ theme: { color } }) => color.primary};
@@ -74,4 +77,5 @@ const NextLink = styled(Link)`
 `;
 const CTAButton = styled(StyledButton)`
   padding: 12px;
+  line-height: 1;
 `;
