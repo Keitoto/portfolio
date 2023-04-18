@@ -1,4 +1,5 @@
 import MediumArticles from '@/components/blog/MediumArticles';
+import { StyledContainer, StyledSection } from '@/components/common/StyledUI';
 import { useMediumFeed } from '@/services/Blog/hooks/useMediumFeed';
 import { RssFeed } from '@/services/Blog/types';
 import { useEffect, useState } from 'react';
@@ -15,9 +16,11 @@ const Blog = () => {
   if (!rssFeed) return <span>Loading...</span>;
 
   return (
-    <div>
-      <MediumArticles articles={rssFeed.articles} />
-    </div>
+    <StyledSection>
+      <StyledContainer>
+        <MediumArticles articles={rssFeed.articles} />
+      </StyledContainer>
+    </StyledSection>
   );
 };
 
