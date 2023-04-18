@@ -1,6 +1,7 @@
-import { StyledContainer } from '@/components/common/StyledUI';
+import { StyledButton, StyledContainer } from '@/components/common/StyledUI';
 import React from 'react';
 import styled from 'styled-components';
+import SouthIcon from '@mui/icons-material/South';
 
 const Hero = () => {
   return (
@@ -8,9 +9,18 @@ const Hero = () => {
       <Section>
         <Container>
           <Heading>
-            Hi, I'm <span>Keita Sekihara</span>,
+            Hi, I'm <span>Keita Sekihara</span>,<br />
+            Front-end, React.js Developer
           </Heading>
-          <Lead>a React Front-end developer</Lead>
+          <HeroButtons>
+            <PrimaryButton href="#works">
+              Works<SouthIcon></SouthIcon>
+            </PrimaryButton>
+            <SecondaryButton href="#skills">
+              Skills<SouthIcon></SouthIcon>
+            </SecondaryButton>
+          </HeroButtons>
+          <Lead></Lead>
         </Container>
       </Section>
       <Section>
@@ -41,6 +51,8 @@ const Container = styled(StyledContainer)`
 `;
 const Heading = styled.h1`
   font-size: 4.8rem;
+  line-height: 1.2;
+  text-align: center;
   span {
     font-size: 4.8rem;
     color: ${({ theme: { color } }) => color.primary};
@@ -65,6 +77,29 @@ const BigHeading = styled.h1`
   }
 `;
 
+const PrimaryButton = styled(StyledButton)`
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    margin-left: 1rem;
+  }
+`;
+const SecondaryButton = styled(PrimaryButton)`
+  background-color: transparent;
+  border-color: ${({ theme: { color } }) => color.text.normal};
+  color: ${({ theme: { color } }) => color.text.normal};
+`;
+
+const HeroButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+`;
 // Hi, I'm Keita Sekihara,
 // Front-End React.js
 // Web Developer

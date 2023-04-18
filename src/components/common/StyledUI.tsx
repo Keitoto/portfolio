@@ -5,6 +5,7 @@ export const StyledButton = styled.a`
   border: .2rem solid ${({ theme: { color } }) => color.primary};
   color: ${({ theme: { color } }) => color.primary};
   font-weight: 600;
+  cursor: pointer;
 `;
 
 export const StyledContainer = styled.div`

@@ -13,7 +13,14 @@ const Blog = () => {
     fetchRssFeed().then((rssFeed) => rssFeed && setRssFeed(rssFeed));
   }, []);
 
-  if (!rssFeed) return <span>Loading...</span>;
+  if (!rssFeed)
+    return (
+      <StyledSection>
+        <StyledContainer>
+          <span>Loading...</span>
+        </StyledContainer>
+      </StyledSection>
+    );
 
   return (
     <StyledSection>

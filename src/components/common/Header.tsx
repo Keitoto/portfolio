@@ -44,6 +44,7 @@ const StyledHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: ${({ theme: { color } }) => color.background};
+  font-size: 1.8rem;
 `;
 // const Container = styled.div`
 //   height: var(--header-height);
