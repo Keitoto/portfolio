@@ -1,9 +1,18 @@
-import React from 'react'
+import {
+  StyledSection,
+  StyledContainer,
+  StyledHeading,
+} from '@/components/common/StyledUI';
+import React from 'react';
 
 const Contact = () => {
   return (
-    <div>Contact</div>
-  )
-}
+    <StyledSection>
+      <StyledContainer>
+        <StyledHeading>Contact</StyledHeading>
+      </StyledContainer>
+    </StyledSection>
+  );
+};
 
-export default Contact
+export default Contact;
