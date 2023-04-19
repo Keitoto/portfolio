@@ -1,4 +1,4 @@
-import { RssFeed, RssFeedResult } from '@/services/Blog/types';
+import { RssFeed, RssFeedResult } from '@/services/blog/types';
 
 const fetchMediumFeed = async (username: string): Promise<RssFeedResult> => {
   const mediumUrl = `https://medium.com/feed/@${username}`;
