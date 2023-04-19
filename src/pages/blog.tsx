@@ -1,10 +1,15 @@
-import MediumArticles from '@/components/blog/MediumArticles';
-import { StyledContainer, StyledSection } from '@/components/common/StyledUI';
-import { useMediumFeed } from '@/services/Blog/hooks/useMediumFeed';
-import { RssFeed } from '@/services/Blog/types';
+import { MediumArticleList } from '@/components/blog';
+import {
+  CenterContent,
+  StyledContainer,
+  StyledSection,
+  StyledSectionHeading,
+} from '@/components/common/UI/StyledUI';
+import { useMediumFeed } from '@/services/blog/hooks/useMediumFeed';
+import { RssFeed } from '@/services/blog/types';
 import { useEffect, useState } from 'react';
 
-const Blog = () => {
+const BlogPage = () => {
   const [rssFeed, setRssFeed] = useState<RssFeed>();
 
   useEffect(() => {
@@ -17,6 +22,7 @@ const Blog = () => {
     return (
       <StyledSection>
         <StyledContainer>
+        <StyledSectionHeading as="h1">Blog</StyledSectionHeading>
           <span>Loading...</span>
         </StyledContainer>
       </StyledSection>
@@ -25,10 +31,13 @@ const Blog = () => {
   return (
     <StyledSection>
       <StyledContainer>
-        <MediumArticles articles={rssFeed.articles} />
+        <CenterContent>
+          <StyledSectionHeading as="h1">Blog</StyledSectionHeading>
+        </CenterContent>
+        <MediumArticleList articles={rssFeed.articles} />
       </StyledContainer>
     </StyledSection>
   );
 };
 
-export default Blog;
+export default BlogPage;

@@ -1,11 +1,18 @@
-import { StyledSection, StyledContainer, StyledHeading } from '@/components/common/StyledUI';
+import {
+  StyledSection,
+  StyledContainer,
+  CenterContent,
+  StyledSectionHeading,
+} from '@/components/common/UI/StyledUI';
 import React from 'react';
 
 const Skills = () => {
   return (
-    <StyledSection>
+    <StyledSection id="skills">
       <StyledContainer>
-        <StyledHeading>Skills</StyledHeading>
+        <CenterContent>
+          <StyledSectionHeading as="h1">Skills</StyledSectionHeading>
+        </CenterContent>
       </StyledContainer>
     </StyledSection>
   );
