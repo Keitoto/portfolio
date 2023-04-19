@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
   ${reset}
   :root {
     font-size: 62.5%; // 1rem = 10px
-    --header-height: 12rem;
+    --header-height: 10rem;
     --container-width: 90rem;
     --space-side-header:3rem;
     --space-side-section:6rem;
