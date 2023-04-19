@@ -1,18 +1,29 @@
+import {
+  StyledSection,
+  StyledContainer,
+  CenterContent,
+  StyledSectionHeading,
+} from '@/components/common/UI/StyledUI';
 import React from 'react';
-import styled from 'styled-components';
 
 const Footer = () => {
-  return <StyledFooter>
-    <small>&copy;2023 Keita Sekihara</small>
-  </StyledFooter>;
+  return (
+    <footer>
+      <Contact />
+    </footer>
+  );
+};
+
+const Contact = () => {
+  return (
+    <StyledSection id="contact">
+      <StyledContainer>
+        <CenterContent>
+          <StyledSectionHeading as="h2">Get in touch</StyledSectionHeading>
+        </CenterContent>
+      </StyledContainer>
+    </StyledSection>
+  );
 };
 
 export default Footer;
-
-const StyledFooter = styled.footer`
-  color: ${({ theme: { color } }) => color.text};
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
