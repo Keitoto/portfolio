@@ -1,4 +1,4 @@
-import { Article } from '@/services/Blog/types';
+import { Article } from '@/services/blog/types';
 import React, { FC } from 'react';
 
 const MediumArticleCard: FC<{ article: Article }> = ({ article }) => {
