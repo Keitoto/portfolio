@@ -1,5 +1,5 @@
-import { Header, SideBar, Footer } from '@/components/common';
-import { StyledContainer } from '@/components/common/StyledUI';
+import { Footer, Header, SideBar } from '@/components/common';
+import { StyledContainer } from '@/components/common/UI/StyledUI';
 import { themeOption } from '@/hooks/useDarkMode';
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
@@ -22,7 +22,7 @@ const Layout: FC<LayoutProps> = ({
       <Header />
       <SideBar onThemeToggle={onToggleTheme} theme={theme}></SideBar>
       <Main>{children}</Main>
-      {/* <Footer /> */}
+      <Footer />
     </LayoutWrapper>
   );
 };
