@@ -1,18 +1,17 @@
 import {
-  CenterContent,
-  StyledContainer,
   StyledSection,
+  StyledContainer,
+  CenterContent,
   StyledSectionHeading,
 } from '@/components/common/UI/StyledUI';
 import { WorksList } from '@/components/works';
-import React from 'react';
 
-const Works = () => {
+const WorksPage = () => {
   return (
-    <StyledSection id="works">
+    <StyledSection>
       <StyledContainer>
         <CenterContent>
-          <StyledSectionHeading as="h2">Works</StyledSectionHeading>
+          <StyledSectionHeading as="h1">Works</StyledSectionHeading>
         </CenterContent>
         <WorksList />
       </StyledContainer>
@@ -20,4 +19,4 @@ const Works = () => {
   );
 };
 
-export default Works;
+export default WorksPage;
