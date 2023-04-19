@@ -1,17 +1,38 @@
-import { StyledButton } from '@/components/common/StyledUI';
+import ScrollLink from '@/components/common/UI/ScrollLink';
+import { StyledNextLink } from '@/components/common/UI/StyledUI';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Header = () => {
   const router = useRouter();
+  // Sticky Menu Area
+  useEffect(() => {
+    window.addEventListener('scroll', isSticky);
+    return () => {
+      window.removeEventListener('scroll', isSticky);
+    };
+  });
+
+  /* Method that will fix header after a specific scrollable */
+  const isSticky = (e: any) => {
+    const header = document.getElementById('header');
+    if (!header) return;
+    const scrollTop = window.scrollY;
+    scrollTop >= 100
+      ? header.classList.add('is-sticky')
+      : header.classList.remove('is-sticky');
+  };
   return (
-    <StyledHeader>
+    <StyledHeader id="header">
       <HomeLink href="/">
         <Logo>Keita Sekihara</Logo>
       </HomeLink>
       <Nav>
+        <NextLink href="/" className={router.pathname == '/' ? 'active' : ''}>
+          Home
+        </NextLink>
         <NextLink
           href="/works"
           className={router.pathname == '/works' ? 'active' : ''}
@@ -43,8 +64,13 @@ const StyledHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${({ theme: { color } }) => color.background};
+  background-color: transparent;
   font-size: 1.8rem;
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+  &.is-sticky {
+    background-color: ${({ theme: { color } }) => color.background};
+  }
 `;
 // const Container = styled.div`
 //   height: var(--header-height);
@@ -55,7 +81,7 @@ const StyledHeader = styled.div`
 //   justify-content: space-between;
 // `;
 const HomeLink = styled(Link)``;
-const Logo = styled.h1`
+const Logo = styled.p`
   color: ${({ theme: { color } }) => color.primary};
   font-weight: bold;
 `;
@@ -73,10 +99,14 @@ const NextLink = styled(Link)`
   display: inline-block;
   font-weight: bold;
   margin: 0 1.2rem;
+  padding: 0.4rem 0;
   color: ${({ theme: { color }, className }) =>
-    className ? color.text.strong : color.text.normal};
+    className === 'active' ? color.text.strong : color.text.normal};
+  border-bottom: 0.1rem solid
+    ${({ theme: { color }, className }) =>
+      className === 'active' ? color.primary : 'transparent'};
 `;
-const CTAButton = styled(StyledButton)`
+const CTAButton = styled(ScrollLink)`
   padding: 1.2rem;
   line-height: 1;
 `;
