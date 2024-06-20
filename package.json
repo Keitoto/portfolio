@@ -26,7 +26,7 @@
     "swr": "^2.1.3",
     "typescript": "5.0.4"
   },
-  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "description": "This is a portfolio website for Keita Sekihara",
   "main": "next.config.js",
   "devDependencies": {
     "@types/styled-components": "^5.1.26",

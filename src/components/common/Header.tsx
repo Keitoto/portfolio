@@ -40,12 +40,6 @@ const Header = () => {
           Works
         </NextLink>
         {/* <NavLink href="/works" className={router.pathname == "/works" ? "active" : ""}>Works</NavLink> */}
-        <NextLink
-          href="/blog"
-          className={router.pathname == '/blog' ? 'active' : ''}
-        >
-          Blog
-        </NextLink>
       </Nav>
       <CTAButton href="#contact">Let's talk</CTAButton>
     </StyledHeader>
