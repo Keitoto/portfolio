@@ -13,16 +13,24 @@ const BlogPage = () => {
   const [rssFeed, setRssFeed] = useState<RssFeed>();
 
   useEffect(() => {
-    const fetchRssFeed = async () => useMediumFeed('keitasekihara', 10);
+    const fetchRssFeed = async () => {
+      const res = await useMediumFeed('keitasekihara', 10);
+      console.log(res);
+    };
+    fetchRssFeed();
+    // try {
+    //   const res = await fetchRssFeed();
+    // } catch (error) {
 
-    fetchRssFeed().then((rssFeed) => rssFeed && setRssFeed(rssFeed));
+    // }
+    // fetchRssFeed().then((rssFeed) => rssFeed && setRssFeed(rssFeed));
   }, []);
 
   if (!rssFeed)
     return (
       <StyledSection>
         <StyledContainer>
-        <StyledSectionHeading as="h1">Blog</StyledSectionHeading>
+          <StyledSectionHeading as="h1">Blog</StyledSectionHeading>
           <span>Loading...</span>
         </StyledContainer>
       </StyledSection>
